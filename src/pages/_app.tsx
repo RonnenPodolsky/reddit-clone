@@ -1,13 +1,21 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import type { AppProps } from 'next/app';
+import { RecoilRoot } from 'recoil';
 
 import { theme } from '../chakra/theme';
+import Layout from '../components/layout';
+
+import '../styles/global.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider theme={theme}>
-      <Component {...pageProps} />
-    </ChakraProvider>
+    <RecoilRoot>
+      <ChakraProvider theme={theme}>
+        <Layout>
+          <Component {...pageProps} />{' '}
+        </Layout>
+      </ChakraProvider>
+    </RecoilRoot>
   );
 }
 
