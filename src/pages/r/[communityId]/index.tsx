@@ -11,8 +11,6 @@ type CommunityPageProps = {
 };
 
 const CommunityPage: React.FC<CommunityPageProps> = ({ communityData }) => {
-  // fetcvh data
-  
   if (!communityData) {
     return <CommunityNotFound />;
   }
